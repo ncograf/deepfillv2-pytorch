@@ -1,4 +1,5 @@
 import torch
+from .networks import Generator
 
 def load_model(path, device='cuda'):  
     try:  
