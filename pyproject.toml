@@ -1,12 +1,16 @@
 [tool.poetry]
-name = "deepfill_pytorch"
+name = "deepfill-pytorch"
 version = "2.0.0"
 description = "A PyTorch reimplementation of the paper Free-Form Image Inpainting with Gated Convolution (DeepFillv2)"
 authors = ["Nico Graf <ncograf@gmail.com>"]
 license = "LICENSE"
 readme = "README.md"
 packages = [
-    {include = "networks.py", from = "model"}
+    {include = "deepfill_pytorch"}
+]
+exclude = [
+    # do not include losses in the build
+    "deepfill_pytorch/losses.py"
 ]
 
 [tool.poetry.dependencies]

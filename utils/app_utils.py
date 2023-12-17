@@ -4,7 +4,7 @@ from PIL import Image
 from torchvision.transforms import ToTensor
 
 from utils.misc import infer_deepfill
-from model import load_model
+from deepfill_pytorch import load_model
 
 import yaml
 try:

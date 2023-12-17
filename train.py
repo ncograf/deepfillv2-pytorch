@@ -5,10 +5,10 @@ import torch
 import torchvision as tv
 import torchvision.transforms as T
 
-import model.losses as gan_losses
+import deepfill_pytorch.losses as gan_losses
 import utils.misc as misc
 #from model.networks_tf import Generator, Discriminator
-from model.networks import Generator, Discriminator
+from deepfill_pytorch.networks import Generator, Discriminator
 from utils.data import ImageDataset
 
 

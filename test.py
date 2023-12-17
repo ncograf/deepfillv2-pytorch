@@ -22,9 +22,9 @@ def main():
     generator_state_dict = torch.load(args.checkpoint)['G']
 
     if 'stage1.conv1.conv.weight' in generator_state_dict.keys():
-        from model.networks import Generator
+        from deepfill_pytorch.networks import Generator
     else:
-        from model.networks_tf import Generator  
+        from deepfill_pytorch.networks_tf import Generator  
 
     use_cuda_if_available = True
     device = torch.device('cuda' if torch.cuda.is_available()

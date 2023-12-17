@@ -7,9 +7,9 @@ def load_model(path, device='cuda'):
         return None
 
     if 'stage1.conv1.conv.weight' in gen_sd.keys():
-        from model.networks import Generator     
+        from deepfill_pytorch.networks import Generator     
     else:
-        from model.networks_tf import Generator 
+        from deepfill_pytorch.networks_tf import Generator 
 
     gen = Generator(cnum_in=5, cnum=48, return_flow=False)
     gen = gen.to(device)
