@@ -55,11 +55,10 @@ New models can be added in `app/models.yaml`
   </div>
 
 
-## Requirements
-  + python3
-  + pytorch
-  + torchvision
-  + numpy
-  + Pillow
-  + tensorboard
-  + pyyaml
+## Installation
+```
+pip install git+https://github.com/ncograf/deepfillv2-pytorch.git
+```
+
+## Usage
+The [Jupyter](https://jupyter.org/) notebook `test.ipynb` shows how the model can be used.

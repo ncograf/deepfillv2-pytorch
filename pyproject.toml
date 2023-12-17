@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "deepfill_pytorch"
+version = "2.0.0"
+description = "A PyTorch reimplementation of the paper Free-Form Image Inpainting with Gated Convolution (DeepFillv2)"
+authors = ["Nico Graf <ncograf@gmail.com>"]
+license = "LICENSE"
+readme = "README.md"
+packages = [
+    {include = "networks.py", from = "model"}
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<=3.13"
+pillow = "^10.1.0"
+torch = {version = "^2.1.0+cpu", source = "torch"}
+torchvision = {version = "^0.16.0+cpu", source = "torch"}
+tensorboard = "^2.15.1"
+pyyaml = "^6.0.1"
+numpy = "^1.26.2"
+ipykernel = "^6.27.1"
+matplotlib = "^3.8.2"
+
+
+[[tool.poetry.source]]
+name = "torch"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
