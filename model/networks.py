@@ -302,7 +302,7 @@ class Generator(nn.Module):
     """
 
     def __init__(self, cnum_in=5, cnum_out=3, cnum=48, 
-                 return_flow=False, checkpoint=None):
+                 return_flow=False, checkpoint=None, device='cpu'):
         super().__init__()
 
         self.stage1 = CoarseGenerator(cnum_in, cnum_out, cnum)
@@ -311,10 +311,10 @@ class Generator(nn.Module):
         self.cnum_in = cnum_in
 
         if checkpoint is not None:
-            generator_state_dict = torch.load(checkpoint)['G']
+            generator_state_dict = torch.load(checkpoint,map_location=torch.device(device))['G']
             self.load_state_dict(generator_state_dict, strict=True)
 
-        self.eval()
+        self.eval().to(device)
 
     def forward(self, x, mask):
         """
